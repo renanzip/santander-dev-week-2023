@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-#Criando a RESTful API em JAVA
-=======
-##Criando a RESTful API em JAVA
->>>>>>> origin/main
 
+#Criando a RESTful API em JAVA
 
 ```mermaid
 
