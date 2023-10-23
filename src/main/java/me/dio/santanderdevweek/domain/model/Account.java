@@ -1,0 +1,66 @@
+package me.dio.santanderdevweek.domain.model;
+
+import jakarta.persistence.*;
+
+import java.math.BigDecimal;
+
+@Entity(name = "tab_account")
+public class Account {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(unique = true) // o número da conta é único
+    private String number;
+
+    private String agency;
+
+    @Column(nullable = false, precision = 13, scale = 2) // nullable para evitar o campo nulo
+    private BigDecimal balance;
+
+    @Column(name = "additional_limit", precision = 13, scale = 2) // mudando o nome de limit devido a palavra
+    // reservada em alguns bancos
+    private BigDecimal limit;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    public String getAgency() {
+        return agency;
+    }
+
+    public void setAgency(String agency) {
+        this.agency = agency;
+    }
+
+    public BigDecimal getBalance() {
+        return balance;
+    }
+
+    public void setBalance(BigDecimal balance) {
+        this.balance = balance;
+    }
+
+    public BigDecimal getLimit() {
+        return limit;
+    }
+
+    public void setLimit(BigDecimal limit) {
+        this.limit = limit;
+    }
+
+}
